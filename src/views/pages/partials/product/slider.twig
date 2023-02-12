@@ -1,0 +1,17 @@
+{% if products|length %}
+    <salla-slider  
+      type="carousel"
+      block-title="{{ title }}"
+      block-subTitle="{{ sub_title|raw }}"
+      display-all-url="{{display_all_url}}"
+      id="{{ type }}-slider">
+        <div slot="items">
+            {% for product in products %} 
+                <div class="slide--one-fourth">
+                    {% include 'pages.partials.product.card' %}
+                </div>
+            {% endfor %}
+        </div>
+    </salla-slider>
+{% endif %}
+ 
